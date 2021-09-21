@@ -1,0 +1,38 @@
+.box_header {
+  background-color: slateblue;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-size: x-large;
+  font-style: italic;
+}
+
+.box_header_text {
+
+  background-color:burlywood;
+  padding: 0px;
+  color: white;
+  text-align: center;
+  font-size: x-large;
+  font-style: italic;
+  grid-column-start: 1;
+  grid-column-end: 4;
+
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr ;
+
+    gap: 20 px;
+    background-color: gainsboro ;
+  }
+
+@media screen and (max-width: 768px){
+  .wrapper {
+
+
+
+  }
+}
