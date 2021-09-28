@@ -1,38 +1,120 @@
-.box_header {
-  background-color: slateblue;
-  padding: 10px;
-  color: white;
-  text-align: center;
-  font-size: x-large;
-  font-style: italic;
+html,body{
+  color:white;
+  font-family:'Opens Sans',helvetica;  
+  height:100%;
+  width:100%;
+  margin: 0px;
 }
 
-.box_header_text {
+.green_header{
+  background-color: rgb(4, 95, 4);
+  padding: 10px;
+  text-align: center; 
+  font-size: x-large;
+  color: white;
+  border-radius: 30px;
+}
 
-  background-color:burlywood;
+.violet_header{
+  background-color: rgb(53, 1, 33);
+  padding: 10px;
+  text-align: center; 
+  font-size: x-large;
+  color: white;
+  border-radius: 30px;
+}
+
+.yellow_header{
+  background-color: yellow;
+  padding: 10px;
+  text-align: center; 
+  font-size: x-large;
+  color: white;
+  border-radius: 30px;
+}
+
+
+.box_image {
+
+  background: url(images/quindianos_5_1500.jpeg);
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+
+}
+
+.box_body_text {
+
+  background-color:rgb(4, 95, 4);
   padding: 0px;
   color: white;
   text-align: center;
   font-size: x-large;
   font-style: italic;
-  grid-column-start: 1;
-  grid-column-end: 4;
 
 }
 
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 2fr 1fr ;
+    column-rule-color: rgb(4, 95, 4) yellow rgb(53, 1, 33);
+    grid-template-rows: 1fr;
+    gap: 0 px;
+}
 
-    gap: 20 px;
-    background-color: gainsboro ;
-  }
+.wrapper_body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20fr 1fr;
+  /*gap: 100px;*/
+  background-color: gainsboro ;
+  text-align: center;
+}
 
 @media screen and (max-width: 768px){
-  .wrapper {
+  .box_body_text {
 
-
-
+    background-color:burlywood;
+    padding: 0px;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+    font-style: italic;
+    grid-column-start: 1;
+    grid-column-end: 4;
   }
+  .box_image {
+
+    color: white;
+    text-align: center;
+    font-size: x-large;
+    font-style: italic;
+    image-rendering: optimizeQuality; 
+    background-size: cover;
+    width: 768px;
+    height: 500px;
+  
+  }
+
+  .wrapper_body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+     grid-template-rows: 0.3fr 0.3fr 0.3fr;
+     background-color: gainsboro ;
+  }
+}
+
+@media screen and (max-width: 650px){
+  .box_body_text {
+  
+    background-color:burlywood;
+    padding: 0px;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+    font-style: italic;
+    grid-column-start: 1;
+    grid-column-end: 3  ;
+    }
 }
