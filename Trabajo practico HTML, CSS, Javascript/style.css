@@ -1,13 +1,22 @@
-html,body,header,menu, footer{
+html,body,header,menu,footer{
   background-color:#1a2434;
   color:white;
-  font-family:'Opens Sans',helvetica;  
+  font-family:'Opens Sans',helvetica;
   height:100%;
   width:100%;
   margin: 0px;
 }
 
+@keyframes animation_main {
+
+  0% {background-image: url(images/quindianos_10.jpeg);}
+  50% {background-image: url(images/quindianos_11.jpeg);}
+  70% {background-image: url(images/quindianos_9.jpeg);}
+
+}
+
 .wrapper {
+
   display: grid;
   grid-template-columns: 4fr 2fr 4fr;
   grid-template-rows: 1fr 10fr 5fr;
@@ -15,50 +24,78 @@ html,body,header,menu, footer{
   gap: 0px;
 }
 
-.menu{
-
-  color:white;
-  padding: 20px;
-  position:relative;
-  width: 100%;
-  height: 20% ;
-  opacity: 0;
-  border-radius: 20px;
-  background-color: #1a2434 ;
-}
-
-.header{
-  padding: 30px; 
-  font-size: large;
-  color:black;
-  background-color: white;
-  background-position: center;
-  /*border-radius: 20px;*/
-}
-
 .main {
 
-  background: url(images/quindianos_9.jpeg);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
   grid-column: 1/3;
-  background-size: cover;
+  background-image: url(images/quindianos_9.jpeg);
+  background-size:cover;
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
   height: 100%;
   position:relative;
-  border-radius: 20px;
+  border-style:solid;
+  border-color: #1a2434;
+  animation-name: animation_main;
+  animation-duration: 10s;
+  /*border-radius: 20px;*/
 
 }
 
-.footer{
-  text-align: center; 
+.menu{
+
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  padding-top: 25px;
+  grid-template-rows: 1;
+  color:white;
+  width: 500px;
+  height: 70px;
+  opacity: 0;
+  border-radius: 0px 0px 20px 20px;
+  border-style:solid;
+  border-right-color: #1a2434;
+  border-bottom-color: #1a2434;
+  border-left-color: #1a2434;
+  background-color: white; /*rgb(12, 37, 37);*/
+  text-align: center;
+  font-size: x-large;
+  
+}
+
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+
+.header{
+
+  padding: 30px; 
   font-size: large;
-  grid-column: 1/4;
+  color:black;
+  background-color: white;
+  background-position: center;
+  position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+  border-bottom: #1a2434;
   /*border-radius: 20px;*/
+}
+
+.header i{
+
+  position: -webkit-sticky;
+	position: sticky;
+	top: 0;
 }
 
 .escudo{
  
+  padding-left: 32px; 
   background-size: contain;
   background-position:center;
   background-color: white;
@@ -67,23 +104,45 @@ html,body,header,menu, footer{
   position:relative;
   background-repeat:no-repeat;
   background-image: url(images/quindianos_escudo_reducido3.png);
+  position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+
+.header_contact{
+
+  font-size: large;
+  color:black;
+  background-color: white;
+  background-position: center;
+  position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+  /*border-radius: 20px;*/
 }
 
 .aside{
 
   display: flex;
-  flex-flow: row;
+  flex-wrap: wrap;
   background-color: white;
   width: 100%;
   height: 100%;
-  font-size: x-large;
-  font-style: italic;
-  border-radius: 20px;
   position:relative;
   background-repeat:no-repeat;
-  background-image: url(images/quindianos_escudo_reducido3.png);
   background-position: center;
-  background-size:auto;
+  background-image: url(images/quindianos_escudo_reducido3.png);  
+  border-style:solid;
+  border-color: #1a2434;
+}
+
+.footer{
+
+  text-align: center; 
+  font-size: large;
+  grid-row: 3;
+  grid-column: 1/4;
+  /*border-radius: 20px;*/
 }
 
 .main_contact {
@@ -116,29 +175,32 @@ html,body,header,menu, footer{
 
 }
 
-
 @media screen and (max-width: 768px){
 
   .wrapper {
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 8fr 5fr;
+    grid-template-rows: 1fr 9fr 5fr 5fr;
     column-rule-color: rgb(4, 95, 4) yellow rgb(53, 1, 33);
     gap: 0px;
   }
   .escudo{
- 
+  
+    padding-left: 250px;
     background-size: contain;
     background-image: url(images/quindianos_escudo_reducido3.png);
     text-align: center;
-    
   }
+
   .main {
 
+    display: flex;
+    flex-wrap: wrap;
     background: url(images/quindianos_9.jpeg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
+    grid-column: 1/3;
     width: 100%;
     height: 100%;
     position:relative;
@@ -148,11 +210,11 @@ html,body,header,menu, footer{
 
   .aside{
     grid-row: 3;
+    grid-column: 1/3;
   }
 }
 
 @media screen and (max-width: 480px){
   
   
-
 }
