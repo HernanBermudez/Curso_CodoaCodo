@@ -1,5 +1,5 @@
 html,body,header,menu,footer{
-  background-color:#1a2434;
+  background-color: black;/*:#1a2434;*/
   color:white;
   font-family:'Opens Sans',helvetica;
   height:100%;
@@ -19,8 +19,7 @@ html,body,header,menu,footer{
 
   display: grid;
   grid-template-columns: 4fr 2fr 4fr;
-  grid-template-rows: 1fr 11fr 5fr;
-  column-rule-color: rgb(4, 95, 4) yellow rgb(53, 1, 33);
+  grid-template-rows: 1fr 11fr 2fr;
   gap: 0px;
 }
 
@@ -51,22 +50,11 @@ html,body,header,menu,footer{
 	position: sticky;
 	top: 0;
 }
-
-/* Page content */
-.content {
-  padding: 20px;
-}
-
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .main_tablas {
-  padding-top: 60px;
 }
 
 .header{
@@ -95,7 +83,7 @@ html,body,header,menu,footer{
   width: 100%;
   height: 100%;
   border-style:solid;
-  border-color: #1a2434;
+  border-color: black;
   animation-name: animation_main;
   animation-duration: 10s;
   position:static;
@@ -106,13 +94,6 @@ html,body,header,menu,footer{
 
 .sticky {
 	position: -webkit-sticky;
-	position: sticky;
-	top: 0;
-}
-
-.header i{
-
-  position: -webkit-sticky;
 	position: sticky;
 	top: 0;
 }
@@ -133,37 +114,23 @@ html,body,header,menu,footer{
 	top: 0;
 }
 
-.header_contact{
-
-  padding: 30px;
-  font-size: large;
-  color:black;
-  background-color: white;
-  background-position: center;
-  position: -webkit-sticky;
-	position: sticky;
-	top: 0;
-  border-bottom: #1a2434;
-  /*border-radius: 20px;*/
-}
-
 .aside{
 
   display: grid;
-  grid-template-columns: 2;
-  grid-template-rows: 8;
+  grid-template-columns: 1;
+  grid-template-rows: 2;
   background-color: white;
   width: 100%;
   height: 100%;
   border-style:solid;
-  border-color: #1a2434;
+  border-color: black;
   position:static;
-  margin: auto;
 }
 
 .tablasub20{
   
-  background-image: url(images/Tabla_sub20.png);
+  display: flexbox;
+  background-image: url(images/tabla_sub20.png);
   background-size: contain;
   background-repeat: no-repeat;
   position:static;
@@ -173,8 +140,9 @@ html,body,header,menu,footer{
 
 .tablasub17{
   
-  background-image: url(images/Tabla_sub17.png);
-  background-size: cover;
+  display: flexbox;
+  background-image: url(images/tabla_sub17.png);
+  background-size: contain;
   position:static;
   margin: auto;
   transition: transform .2s; /* Animation */
@@ -188,20 +156,25 @@ html,body,header,menu,footer{
 .escudo_quindianos_marcador{
 
   grid-column: 1;
-  grid-row: 2;
-  padding-top: 10px;
+  grid-row: 1;
+  flex-wrap: wrap;
   background-image: url(images/quindianos_escudo_reducido3.png);
-  background-size: auto;
+  background-size: contain;
   background-repeat: no-repeat;
+  
 }
 
 .escudo_caldas_marcador{
 
-  grid-column: 2;
-  grid-row: 2;
+  grid-column: 3;
+  grid-row: 1;
+  flex-wrap: wrap;
   padding-top: 10px;
   background-image: url(images/Escudo_Oficial_Once_Caldas.png);
-  background-size:auto;
+  background-size:contain;
+  min-width: 50px;
+  max-width: 100px;
+  min-height: 150px;
   background-repeat: no-repeat;
 }
 
@@ -209,40 +182,31 @@ html,body,header,menu,footer{
 
   text-align: center; 
   font-size: large;
-  grid-row: 3;
   grid-column: 1/4;
-  background-color: white !important;
-  /*border-radius: 20px;*/
+  grid-template-columns: 5;
+  grid-template-rows: 2;
+  background-color: black;
 }
 
-.main_contact {
+.social_links{
 
-  background: url(images/quindianos_10.jpeg);
+  padding: 50px;
   border-radius: 20px;
-  grid-column: 1/5;
-  grid-row: 2/4;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  background-size: cover;
-  height: 100%;
-  width: 100%;  
-
 }
 
-.main_tablas {
-
-  background: url(images/quindianos_11.jpeg);
-  border-radius: 20px;
-  grid-column: 1/5;
-  grid-row: 2/3;
+a {
+  float: center;
+  padding: 10px 12px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
   text-align: center;
-  position: relative;
-  z-index: 1;
-  background-size: cover;
-  height: 100%;
-  width: 100%;  
+  border-right: 1px solid rgba(255,255,255,0.1);
+  vertical-align: middle;
+}
 
+a:hover {
+  background: rgba(255,255,255,0.1);
 }
 
 * {box-sizing:border-box}
@@ -254,17 +218,18 @@ html,body,header,menu,footer{
   flex-wrap: wrap;
   grid-row: 2/3;
   grid-column: 1/4;
-  width: 800px;
-  height: 600px;
   /*max-width: 1000px;*/
   position:static;
   margin: auto;
   background-size: contain;
+  border-style:solid;
+  border-color: #1a2434;
 }
 
 /* Hide the images by default */
 .mySlides {
   display: none;
+  background-size: auto;
 }
 
 /* Next & previous buttons */
@@ -272,9 +237,12 @@ html,body,header,menu,footer{
   cursor: pointer;
   position: absolute;
   top: 50%;
+  right: 10%;
   width: auto;
-  margin-top: -22px;
+  margin-top: 100px;
+  margin-right: 320px;
   padding: 16px;
+
   color: white;
   font-weight: bold;
   font-size: 18px;
@@ -305,15 +273,6 @@ html,body,header,menu,footer{
   text-align: center;
 }
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
@@ -330,7 +289,7 @@ html,body,header,menu,footer{
   background-color: #717171;
 }
 
-/* Fading animation */
+/* Fading animation - Animación */
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
@@ -338,12 +297,12 @@ html,body,header,menu,footer{
   animation-duration: 1.5s;
 }
 
-@-webkit-keyframes fade {
+@-webkit-keyframes fade { /* Animación */
   from {opacity: .4}
   to {opacity: 1}
 }
 
-@keyframes fade {
+@keyframes fade {      /* Animación*/
   from {opacity: .4}
   to {opacity: 1}
 }
